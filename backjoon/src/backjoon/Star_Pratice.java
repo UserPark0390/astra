@@ -55,6 +55,10 @@ public class Star_Pratice {
 			}
 			System.out.println("");
 		} 
+		System.out.println("------------------ 5.5단계 ----------------------");
+		
+
+			
 		
 		
 	}
