@@ -2,7 +2,7 @@ package Sliver;
 
 import java.util.Scanner;
 
-public class BackJoon1978_소수찾기 {
+public class BackJoon1978_소수찾기2 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
