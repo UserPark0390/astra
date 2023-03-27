@@ -1,5 +1,6 @@
 package backjoon;
 
+import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class PriorityQueuePractice {
@@ -18,6 +19,12 @@ public class PriorityQueuePractice {
 		
 		p_q.poll();
 		System.out.println(p_q);
+		
+		System.out.println(p_q.peek());
 
+		Iterator iterator = p_q.iterator();
+		while(iterator.hasNext()){
+			System.out.print(iterator.next() + " ");
+		}
 	}
 }
