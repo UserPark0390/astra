@@ -7,13 +7,22 @@ import java.io.InputStreamReader;
 public class BackJoon2231_분해합 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String N = br.readLine();
-		int result = Integer.parseInt(N);
-		for(int i = 0; i < N.length(); i++) {
-			System.out.println(N.charAt(i));			
-			result += Character.getNumericValue(N.charAt(i));
+		int N = Integer.parseInt(br.readLine());
+		int result = 0;
+
+		for (int i = 0; i < N; i++) {
+			int tmp = i;
+			int sum = 0;
+
+			while (tmp != 0) {
+				sum += tmp % 10;
+				tmp /= 10;
+			}
+			if (sum + i == N) {
+				result = i;
+				break;
+			}
 		}
 		System.out.println(result);
-		
 	}
 }
