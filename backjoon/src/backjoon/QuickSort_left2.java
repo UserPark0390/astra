@@ -1,7 +1,7 @@
 package backjoon;
 
 public class QuickSort_left2 {
-	
+
 	public static void sort(int [] a) {
 		left_pivot_sort(a, 0, a.length -1);
 	}
