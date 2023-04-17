@@ -1,8 +1,8 @@
-package level0;
+package level0.stream;
 
 import java.util.stream.Collectors;
 
-public class Programmers_외계행성나이_2 {
+public class Programmers_외계행성나이 {
 
 	public static void main(String[] args) {
 		int age = 100;

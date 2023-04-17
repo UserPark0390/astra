@@ -1,10 +1,10 @@
-package level0;
+package level0.stream;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 
-public class Programmers_진료순서정하기2 {
+public class Programmers_진료순서정하기 {
 
 	public static void main(String[] args) {
 		int[] emergency = {30, 10, 23, 6, 100};

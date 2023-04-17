@@ -1,11 +1,11 @@
-package level0;
+package level0.stream;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Programmers_배열뒤집기2 {
+public class Programmers_배열뒤집기 {
 	public int[] solution(int[] numList) {
 		List<Integer> list = Arrays.stream(numList).boxed().collect(Collectors.toList());
 

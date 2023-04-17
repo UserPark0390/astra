@@ -1,13 +1,21 @@
 package level0;
 
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
 public class Programmers_짝수홀수개수 {
-	// 스트림 공부해서 연습하기
-	public int[] solution(int[] numList) {
-		return IntStream.of((int) Arrays.stream(numList).filter(i -> i % 2 == 0).count(),
-				(int) Arrays.stream(numList).filter(i -> i % 2 == 1).count()).toArray();
+	public int[] solution(int[] num_list) {
+		int hol = 0;
+		int jak = 0;
+		int[] answer = new int[2];
+		for (int i = 0; i < num_list.length; i++) {
+			if (num_list[i] % 2 == 0) {
+				jak++;
+			} else {
+				hol++;
+			}
+		}
+		answer[0] = jak;
+		answer[1] = hol;
+		return answer;
+
 	}
 
 }
