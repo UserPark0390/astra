@@ -9,7 +9,6 @@ public class Lotto {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		StringBuffer sb = new StringBuffer();
-		int cash = sc.nextInt();
 		int lotto[] = new int[6];
 		List<Integer> list = new ArrayList<>();
 
