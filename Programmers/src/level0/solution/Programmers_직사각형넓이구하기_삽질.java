@@ -1,6 +1,6 @@
 package level0.solution;
 
-public class Programmers_직사각형넓이구하기 {
+public class Programmers_직사각형넓이구하기_삽질 {
 	public static void main(String[] args) {
 		int[][] dots = {{1, 1}, {-5, 1}, {-5, 2}, {1, 2}}; 
 		System.out.println(solution(dots));
