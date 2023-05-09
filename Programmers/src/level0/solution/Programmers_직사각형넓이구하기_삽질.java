@@ -2,7 +2,7 @@ package level0.solution;
 
 public class Programmers_직사각형넓이구하기_삽질 {
 	public static void main(String[] args) {
-		int[][] dots = {{1, 1}, {-5, 1}, {-5, 2}, {1, 2}}; 
+		int[][] dots = {{-1, -1}, {1, 1}, {1, -1}, {-1, 1}}; 
 		System.out.println(solution(dots));
 	}
     public static int solution(int[][] dots) {
@@ -27,7 +27,7 @@ public class Programmers_직사각형넓이구하기_삽질 {
         		aX = Math.abs(dots[0][0]);
             	bX = dots[1][0];
             	sumX = aX + bX;
-        	} else {
+        	} else if(dots[0][0] >= 0 && dots[1][0] < 0){
         		aX = dots[0][0];
             	bX = Math.abs(dots[1][0]);
             	sumX = aX + bX;
@@ -48,7 +48,7 @@ public class Programmers_직사각형넓이구하기_삽질 {
             	aY = dots[1][1];
             	bY = Math.abs(dots[2][1]);
             	sumY = aY + bY;
-        	} else {
+        	} else if(dots[2][1] >= 0 && dots[1][1] < 0){
             	aY = Math.abs(dots[1][1]);
             	bY = dots[2][1];
             	sumY = aY + bY;

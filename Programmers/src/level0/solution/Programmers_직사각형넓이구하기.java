@@ -2,63 +2,73 @@ package level0.solution;
 
 public class Programmers_직사각형넓이구하기 {
 	public static void main(String[] args) {
-		int[][] dots = {{1, 1}, {-5, 1}, {-5, 2}, {1, 2}}; 
+		int[][] dots = { { 1, 1 }, { -5, 1 }, { -5, 2 }, { 1, 2 } };
 		System.out.println(solution(dots));
 	}
-    public static int solution(int[][] dots) {
-        int answer = 0;
-        int aX = 0;
-        int aY = 0;
-        int sumX = 0;
-        int bX = 0;
-        int bY = 0;
-        int sumY = 0;
-       
-        if(dots[0][0] >= 0 && dots[1][0] >= 0) { // 둘 다 + 일 때
-        	aX = dots[0][0];
-        	bX = dots[1][0];
-        	sumX = bX-aX;
-        } else if(dots[0][0] < 0 && dots[1][0] < 0) { // 둘 다 -일 때
-        	aX = Math.abs(dots[0][0]);
-        	bX = Math.abs(dots[1][0]);
-        	sumX = bX-aX;    
-        } else if(dots[0][0] < 0 && dots[1][0] >= 0 || dots[0][0] >= 0 && dots[1][0] < 0) { // 하나는 + 다른 하나는 -
-        	if(dots[0][0] < 0 && dots[1][0] >= 0) {
-        		aX = Math.abs(dots[0][0]);
-            	bX = dots[1][0];
-            	sumX = aX + bX;
-        	} else {
-        		aX = dots[0][0];
-            	bX = Math.abs(dots[1][0]);
-            	sumX = aX + bX;
-        	}
 
-        }
-        
-        if(dots[1][1] >= 0 && dots[2][1] >= 0) { // 둘 다 + 일 때
-        	aY = dots[1][1];
-        	bY = dots[2][1];
-        	sumY = bY-aY;
-        } else if(dots[1][1] < 0 && dots[2][1] < 0) { // 둘 다 -일 때
-        	aY = Math.abs(dots[1][1]);
-        	bY = Math.abs(dots[2][1]);
-        	sumY = bY-aY;   
-        } else if(dots[1][1] >= 0 && dots[2][1] < 0 || dots[1][1] < 0 && dots[2][1] >= 0) { // 하나는 + 다른 하나는 -
-        	if(dots[2][1] < 0 && dots[1][1] >= 0) {
-            	aY = dots[1][1];
-            	bY = Math.abs(dots[2][1]);
-            	sumY = aY + bY;
-        	} else {
-            	aY = Math.abs(dots[1][1]);
-            	bY = dots[2][1];
-            	sumY = aY + bY;
-        	}
-        }
-        answer = sumX * sumY;
-        	
-        
-        
-        return answer;
-    }
-	
+	public static int solution(int[][] dots) {
+		int answer = 0;
+		int aX = dots[0][0];
+		int aY = dots[0][1];
+		int sumX = 0;
+		boolean checkX = false; // false = -1 이하
+		int bX = 0;
+		int bY = 0;
+		int sumY = 0;
+		boolean checkY = false;
+
+		for (int i = 0; i < dots.length; i++) {
+			if (i == 0) {
+				aX = dots[i][0];
+				aY = dots[i][1];
+			}
+			if (dots[i][0] >= 0 && aX < dots[i][0]) {
+				bX = dots[i][0];
+				checkX = true;
+			} else if(aX != dots[i][0] && dots[i][0] < 0){
+				bX = dots[i][0];
+			}
+
+			if (dots[i][1] >= 0 && aY < dots[i][1]) {
+				bY = dots[i][1];
+				checkY = true;
+			} else if(aY != dots[i][1] && dots[i][1] < 0){
+				bY = dots[i][1];
+			}
+		}
+		if (aX >= 0 && checkX) { // 둘 다 + / bx > ax
+			sumX = bX - aX;
+		} else if ((aX < 0 && checkX) || (aX > 0 && !checkX)) {
+			if (aX < 0 && checkX) { // ax = -  / bx = +
+				sumX = Math.abs(aX) + bX;
+			} else { // ax = + / bx = -
+				sumX = aX + Math.abs(bX);
+			}
+		} else {
+			if(Math.abs(bX) > Math.abs(aX)) {
+				sumX = Math.abs(bX) - Math.abs(aX);
+			} else {
+				sumX = Math.abs(aX) - Math.abs(bX);
+			}
+		}
+
+		if (bY >= 0 && checkY) {
+			sumY = bY - aY;
+		} else if ((aY < 0 && checkY) || (aY > 0 && !checkY)) {
+			if (aY < 0 && checkY) {
+				sumY = Math.abs(aY) + bY;
+			} else {
+				sumX = aY + Math.abs(bY);
+			}
+		} else {
+			if(Math.abs(bY) > Math.abs(aY)) {
+				sumY = Math.abs(bY) - Math.abs(aY);
+			} else {
+				sumY = Math.abs(aX) - Math.abs(bY);
+			}
+		}
+		answer = sumX * sumY;
+		return answer;
+	}
+
 }
