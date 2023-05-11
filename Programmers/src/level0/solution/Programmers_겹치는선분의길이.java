@@ -5,13 +5,13 @@ import java.util.Comparator;
 
 public class Programmers_겹치는선분의길이 {
 	public static void main(String[] args) {
-		 int[][] lines = { { 0, 1 }, { 2, 5 }, { 3, 9 } };
+		 //int[][] lines = { { -10, -1 }, { -2, 5 }, { 3, 9 } };
 		//int[][] lines = { { 0, 5 }, { 3, 9 }, { 1, 10 } };
+		 int[][] lines = {{0, 2}, {-3, -1}, {-2, 1}};
 		System.out.println(solution(lines));
 	}
 
-	public static int solution(int[][] lines) {
-		System.out.println(Arrays.toString(lines));
+	public static int solution(int[][] lines) {		
 		int answer = 0;
 		Arrays.sort(lines, Comparator.comparing((int[] o) -> o[0]));
 		for (int i = 0; i < lines.length; i++) {
