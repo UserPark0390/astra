@@ -1,4 +1,7 @@
-package level0.solution;
+package level0.stream;
+
+import java.util.stream.IntStream;
+import java.util.HashMap;
 
 public class Programmers_겹치는선분의길이 {
 	public static void main(String[] args) {
@@ -10,19 +13,12 @@ public class Programmers_겹치는선분의길이 {
 	}
 
 	public static int solution(int[][] lines) {
-		int[] rail = new int[200];
-		for (int[] line : lines) {
-			for (int j = (line[0] + 100); j < (line[1] + 100); j++) {
-				rail[j]++;
-			}
-		}
+        HashMap<Integer, Integer> count = new HashMap<>();
+        for (int line[]: lines) {
+            IntStream.range(Math.min(line[0],line[1]),Math.max(line[0],line[1])).forEach(i->count.put(i, count.getOrDefault(i, 0)+1));
+        }
 
-		int answer = 0;
-		for (int value : rail) {
-			if (value > 1)
-				answer++;
-		}
-		return answer;
+        return (int) count.values().stream().filter(i -> i > 1).count();
 
 	}
 }
