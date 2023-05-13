@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BackJoon15649 {
+public class BackJoon15649_N과M_1 {
 	static int n, m;
 	static boolean check[];
 	static int A[];
