@@ -13,7 +13,7 @@ public class Programmers_같은숫자는싫어 {
     public static int[] solution(int []arr) {
         int[] answer = {};
         int count = 0;
-        List<Integer> list = new ArrayList();
+        List<Integer> list = new ArrayList<>();
         for(int i = 0; i < arr.length; i++) {
         	if(list.isEmpty()) {
         		list.add(arr[i]);
