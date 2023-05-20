@@ -14,20 +14,17 @@ public class Programmers_이진수더하기2 {
 	
     public static String solution(String bin1, String bin2) {
     	String answer = "";
-    	char [] bin1_char = new char[bin1.length()];
-    	char [] bin2_char = new char[bin2.length()];
-    	List<Character> list = new ArrayList<>();
-    	for(char ch : bin1_char) {
-    		list.add(ch);
+    	if(bin1.length() >= bin2.length()) {
+    		for(int i = 0; i < bin1.length(); i++) {
+    			
+    		}
     	}
-        Collections.reverse(list);
-        ListIterator li = list.listIterator();
-        while(li.hasNext()) {
-        	
-        }
-//        for(int i = 0; i < bin1.length(); i++) {
-//        	
-//        }
+    	
+    	
+    	
+    	
+    	
+ 
         
         return answer;
     }
