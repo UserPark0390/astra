@@ -2,7 +2,7 @@ package level0.solution;
 
 import java.util.Scanner;
 
-public class Programmers_문자열뒤집기2 {
+public class Programmers_문자열뒤집기2  {
 	
 	static String my_string = "";
 	
@@ -13,10 +13,9 @@ public class Programmers_문자열뒤집기2 {
 	}
 	
     public static String solution(String my_string) {
-    	String answer = "";
-    	for(int i = 0; i < my_string.length(); i++) {
-    		answer += my_string.charAt(my_string.length()-1-i);
-    	} 	
-        return answer;
+    	StringBuilder sb = new StringBuilder();
+    	sb.append(my_string);
+    	sb.reverse();
+        return sb.toString();
     }
 }
