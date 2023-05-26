@@ -42,7 +42,7 @@ public class Programmers_이진수더하기 {
 			}
 			sum += Int_arr[j] * num;
 		}
-		System.out.println("sum : " + sum);
+		System.out.println("sum~ : " + sum);
 		return sum;
 	}
 	
