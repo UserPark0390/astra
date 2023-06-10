@@ -18,6 +18,7 @@ public class Programmers_다음에올숫자 {
         		answer = tmp * common[i+1];
         	}
         }       
+        
         return answer;
     }
 	
