@@ -2,24 +2,35 @@ package level0.solution;
 
 public class Programmers_다음에올숫자 {
 	public static void main(String[] args) {
-		int[] common = {2, 4, 8};
+		int[] common = { 0, 10, 100, 1000 };
 		System.out.println(solution(common));
 	}
-	
-    public static int solution(int[] common) {
-        int answer = 0;
-        int tmp = 0;
-        for(int i = 0; i < common.length-1; i++) {
-        	if(i == 0) {
-        		tmp = common[i];
-        	} else if(common[i] + tmp == common[i+1]) {
-        		answer = tmp + common[i+1];
-        	} else if(common[i] * (common[i] - tmp) == common[i+1]) {
-        		answer = tmp * common[i+1];
-        	}
-        }       
-        
-        return answer;
-    }
-	
+
+	public static int solution(int[] common) {
+		int answer = 0;
+		int checkSum = common[1] - common[0];
+		int checkMul = 0;
+		boolean checkZero = false;
+		int Number = 0;
+		for(int i = 0; i < common.length; i++) {
+			if(common[i] == 0) {
+				checkZero = true;
+				Number = i;
+			}
+		}
+		if(checkZero) {
+			checkMul = 0;
+		} else {
+			checkMul = common[1] / common[0];
+		}
+
+		if (common[2] == common[1] + checkSum) {
+			answer = common[common.length - 1] + checkSum;
+		} else {
+			answer = common[common.length - 1] * checkMul;
+		}
+
+		return answer;
+	}
+
 }
