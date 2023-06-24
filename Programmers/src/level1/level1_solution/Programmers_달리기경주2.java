@@ -1,9 +1,8 @@
-package level1;
+package level1.level1_solution;
 
 import java.util.Arrays;
 
-// Map 써서 풀기
-public class Programmers_달리기경주3 {
+public class Programmers_달리기경주2 {
 	public static void main(String[] args) {
 		String[] players = { "mumu", "soe", "poe", "kai", "mine" };
 		String[] callings = { "kai", "kai", "mine", "mine" };
