@@ -10,6 +10,7 @@ public class Programmers_달리기경주 {
 		String[] callings = { "kai", "kai", "mine", "mine" };
 		System.out.println(Arrays.toString(solution(players, callings)));
 	}
+	// list를 이용해서 풀었으나 시간초과발생
 	// 시간복잡도에 걸린다 players가 최대 5만이라서
 	// 따라서, Hashmap으로 풀어야한다.
 	

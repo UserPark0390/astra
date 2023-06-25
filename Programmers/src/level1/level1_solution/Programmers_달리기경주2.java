@@ -8,7 +8,7 @@ public class Programmers_달리기경주2 {
 		String[] callings = { "kai", "kai", "mine", "mine" };
 		System.out.println(Arrays.toString(solution(players, callings)));
 	}
-
+	// 2중 for문으로 풀면 문제점 : 시간초과
 	public static String[] solution(String[] players, String[] callings) {
 		String[] answer = new String[players.length];
 
