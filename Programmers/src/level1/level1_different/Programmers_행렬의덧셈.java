@@ -1,4 +1,4 @@
-package level1.level1_solution;
+package level1.level1_different;
 
 public class Programmers_행렬의덧셈 {
 	public static void main(String[] args) {
@@ -10,11 +10,13 @@ public class Programmers_행렬의덧셈 {
 	}
 	
     public static int[][] solution(int[][] arr1, int[][] arr2) {
-        for(int i = 0; i < arr1.length; i++) {
-        	for(int j = 0; j < arr1[i].length; j++) {
-        		arr2[i][j] += arr1[i][j] + arr2[i][j];
-        	}
+        int[][] answer = {};
+        answer = arr1;
+        for(int i=0; i<arr1.length; i++){
+            for(int j=0; j<arr1[0].length; j++){
+                answer[i][j] += arr2[i][j];
+            }
         }
-        return arr2;
+        return answer;
     }
 }
