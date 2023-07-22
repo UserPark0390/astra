@@ -40,7 +40,7 @@ public class Lotto_ps {
 			List<Integer> num = iterator.next();
 			System.out.println(num);
 			if(count % 5 == 0) {
-				System.out.println("\n*****" +count/5 + "장 출력합니다. *****\n");
+				System.out.println("\n*****" + count/5 + "장 출력했습니다. *****\n");
 			}
 			count++;
 		}
