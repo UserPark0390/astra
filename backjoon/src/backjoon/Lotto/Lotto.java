@@ -1,4 +1,4 @@
-package backjoon;
+package backjoon.Lotto;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,8 +29,6 @@ public class Lotto {
 
 			// 번호 출력
 			for (int i = 0; i < 6; i++) {
-				System.out.print(lotto[i] + " ");
-				System.out.print("오늘의 행운의 숫자 : " + list.get(i));
 				sb.append(list.get(i) + " ");
 			}
 			System.out.print("오늘의 행운의 숫자 : " + sb);

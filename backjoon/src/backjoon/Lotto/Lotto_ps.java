@@ -1,4 +1,4 @@
-package backjoon;
+package backjoon.Lotto;
 
 import java.util.ArrayList;
 import java.util.Collections;
