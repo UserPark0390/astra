@@ -2,7 +2,6 @@ package level1.level1_different;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
 public class Programmers_정수내림차순으로배치하기 {
 	public static void main(String[] args) {
