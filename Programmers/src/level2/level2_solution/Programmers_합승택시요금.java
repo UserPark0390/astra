@@ -1,4 +1,4 @@
-package level2;
+package level2.level2_solution;
 
 public class Programmers_합승택시요금 {
 	public static void main(String[] args) {
