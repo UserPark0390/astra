@@ -25,79 +25,36 @@ public class Programmers_키패드누르기231209_2 {
 				answer += "R";
 				right_Position = numbers[i];
 			} else {
-				if (numbers[i] == 0) {
-					numbers[i] = 11;
-					if (hand.equals("left")) {
-						left_distance = change(numbers[i], left_Position);
-						right_distance = change(numbers[i], right_Position);
-						if (left_distance > right_distance) {
-							answer += "R";
-							right_Position = numbers[i];
-						} else {
-							answer += "L";
-							left_Position = numbers[i];
-						}
+				numbers[i] = numbers[i] == 0 ? 11 : numbers[i];
+				left_distance = change(numbers[i], left_Position);
+				right_distance = change(numbers[i], right_Position);
+				if (hand.equals("left")) {
+					if (left_distance > right_distance) {
+						answer += "R";
+						right_Position = numbers[i];
 					} else {
-						if (hand.equals("right")) {
-							left_distance = change(numbers[i], left_Position);
-							right_distance = change(numbers[i], right_Position);
-							if (left_distance < right_distance) {
-								answer += "L";
-								left_Position = numbers[i];
-							} else {
-								answer += "R";
-								right_Position = numbers[i];
-							}
-						}
+						answer += "L";
+						left_Position = numbers[i];
 					}
 				} else {
-					if (hand.equals("left")) {
-						left_distance = change(numbers[i], left_Position);
-						right_distance = change(numbers[i], right_Position);
-						if (left_distance > right_distance) {
-							answer += "R";
-							right_Position = numbers[i];
-						} else {
-							answer += "L";
-							left_Position = numbers[i];
-						}
+					if (left_distance < right_distance) {
+						answer += "L";
+						left_Position = numbers[i];
 					} else {
-						if (hand.equals("right")) {
-							left_distance = change(numbers[i], left_Position);
-							right_distance = change(numbers[i], right_Position);
-							if (left_distance < right_distance) {
-								answer += "L";
-								left_Position = numbers[i];
-							} else {
-								answer += "R";
-								right_Position = numbers[i];
-							}
-						}
+						answer += "R";
+						right_Position = numbers[i];
 					}
 				}
-
 			}
 
-		} // for end
+		}
 
 		return answer;
 	}
 
 	private static int change(int distance, int position) {
-		System.out.println("what the : " + distance);
-		System.out.println("fuck : " + position);
 		int sum = Math.abs(distance - position);
-		if(Math.abs(distance - position) % 3 == 0) {
-			distance = sum;
-		} else {
-			distance = sum/3 + 2;
-		}
-	
-		if (sum >= 3) {
-			distance = (int) (Math.floor(sum / 3) + 1);
-		} else {
-			distance = sum;
-		}
+		distance = sum < 3 ? sum : (sum / 3 + sum % 3);
 		return distance;
 	}
 }
