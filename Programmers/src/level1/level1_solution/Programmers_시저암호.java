@@ -2,8 +2,8 @@ package level1.level1_solution;
 
 public class Programmers_시저암호 {
 	public static void main(String[] args) {
-		String s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		int n = 25;
+		String s = "a B z";
+		int n = 4;
 		System.out.println(solution(s, n));
 	}
 
@@ -13,16 +13,26 @@ public class Programmers_시저암호 {
 		String answer = "";
 		String[] s_arr = s.split("");
 		for (int i = 0; i < s_arr.length; i++) {
-			char change = (char) ((int) s_arr[i].charAt(0));
-			if ((change >= 65 && change <= 90) || (change >= 97 && change <= 122)) {
-				
-				answer += String.valueOf(change + "");
-			} else if (change > 90 || change > 122) {
-				answer += String.valueOf((char) (change - 26) + "");
+			System.out.println((int) s_arr[i].charAt(0));
+			boolean check = (int) s_arr[i].charAt(0) >= 97 ? true : false;			
+			char change = (char)((int) s_arr[i].charAt(0)+n);
+			if(check) {
+				if (change >= 97 && change <= 122) {				
+					answer += String.valueOf(change + "");
+				} else if (change > 122) {
+					answer += String.valueOf((char) (change - 26) + "");
+				} else {
+					answer += " ";
+				}
 			} else {
-				answer += " ";
+				if (change >= 65 && change <= 90) {				
+					answer += String.valueOf(change + "");
+				} else if (change > 90) {
+					answer += String.valueOf((char) (change - 26) + "");
+				} else {
+					answer += " ";
+				}
 			}
-
 		}
 		return answer;
 	}
