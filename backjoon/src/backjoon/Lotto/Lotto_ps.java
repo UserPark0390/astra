@@ -21,7 +21,7 @@ public class Lotto_ps {
 			for(int i = 0; i < 5; i++) {
 				List<Integer> numberList = new ArrayList<>();
 				while(numberList.size() < 6) {
-					int Number = (int) Math.floor(Math.random()* (46-1) +1);   
+					int Number = (int) Math.floor(Math.random() * (46-1) + 1);   
 					if(numberList.size() == 0) {
 						numberList.add(Number);
 					} else if(numberList.contains(Number)) {
